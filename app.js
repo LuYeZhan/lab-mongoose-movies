@@ -4,10 +4,11 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
+const hbs = require('hbs');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const celebritiesRouter = require('./routes/celebrities');
+// const moviesRouter = require('./routes/movies');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/celebrities', celebritiesRouter);
+// app.use('/movies', moviesRouter);
 
 // -- 404 and error handler
 
